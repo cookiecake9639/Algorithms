@@ -87,6 +87,21 @@ public static void PrintPermutations2SB(StringBuilder s1, StringBuilder s2) {
 		
 		
 	}
+
+public static void PrintPermutations3(String sofar, String theRest){
+	
+	if(theRest.length() == 0)
+		System.out.println(sofar);
+	else {
+		for (int i = 0; i< theRest.length(); i++)
+		{
+			String next = sofar + theRest.charAt(i);
+			String remaining = theRest.substring(0, i) + theRest.substring(i + 1);
+			PrintPermutations3(next, theRest);
+		}
+	}
+}
+	
 	
 
 }
